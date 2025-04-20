@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Página que calcula edad en 5, 10 y 100 años</title>
+	</head>
+
+	<body>
+		<h1>Página que calcula edad</h1>
+		<form id= "DatosUsuario">
+			<label for="edad">Ingrese su edad actual:</label> <br>
+			<input type="number" id="edad" name="edad"> <br><br>
+			
+			<button type="button" onclick="concatDatos()">Ingresar</button>
+		</form>
+		
+		<script>
+			// Función
+			function concatDatos(){
+				var edadUsuario = parseInt(document.getElementById("edad").value);
+				
+				var edad5 = edadUsuario + 5;
+				var edad10 = edadUsuario + 10;
+				var edad100 = edadUsuario + 100;
+				
+				const mensajeEdad = `Tenés ${edadUsuario} años en la actualidad.\nEn 5 años tendrás: ${edad5}.\nEn 10 años tendrás: ${edad10}.\nEn 100 años tendrás: ${edad100}.`;
+				
+				alert(mensajeEdad);
+			}
+		</script>
+
+	</body>
+
+</html>

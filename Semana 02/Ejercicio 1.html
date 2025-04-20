@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Conversor de guaraníes a Dólares</title>
+	</head>
+
+	<body>
+		<h1>Conversor de guaraníes a Dólares</h1>
+		<form id= "cambio">
+			<label for="guaranies">Ingresa el monto en guaranies (Gs):</label> <br>
+			<input type="number" id="guaranies" name="guaranies" placeholder="Ej: 1000000"> <br><br>
+			
+			<label for="tasa">Ingresa valor de cambio a Dólar (USD):</label><br>
+			<input type="number" id="tasa" name="tasa" placeholder="Ej: 8000"> <br><br>
+			
+			<button type="button" onclick="cambioGsaUSD()">Cambiar</button>
+			
+		</form>
+		
+		<script>
+			// Función para calcular el cambio de guaraníes a Dólares
+			function cambioGsaUSD(){
+				var cantUSD = document.getElementById("guaranies").value / document.getElementById("tasa").value;
+				alert("El valor en dólares es: "+cantUSD);
+			}
+		</script>
+
+	</body>
+
+</html>

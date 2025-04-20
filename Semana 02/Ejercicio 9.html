@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Detector de año bisiesto</title>
+	</head>
+
+	<body>
+		<h1>Detector de año bisiesto</h1>
+		<form id= "DatosUsuario">
+			<label for="year">Ingrese el año en cuestión:</label> <br>
+			<input type="number" id="year" name="year" placeholder="Ej: 1984"> <br><br>
+			
+			<button type="button" onclick="detBisiesto()">Ingresar</button>
+		</form>
+		
+		<script>
+			// Función
+			function detBisiesto(){
+				
+				var anho = document.getElementById("year").value;
+				var Bisiesto = (anho % 4 === 0 && anho % 100 !== 0) || (anho % 400 === 0);
+				
+				if (Bisiesto){
+					alert(`${anho} es un año bisiesto.`);
+				}else{
+					alert(`${anho} no es un año bisiesto.`);
+				}
+			}
+		</script>
+
+	</body>
+
+</html>

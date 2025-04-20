@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Calculadora de días entre fechas</title>
+	</head>
+
+	<body>
+		<h1>Calculadora de días entre fechas</h1>
+		<form id= "DatosUsuario">
+			<label for="fecha1">Ingrese fecha 1:</label> <br>
+			<input type="text" id="fecha1" name="fecha1" placeholder="Formato: dd/mm/yyyy"> <br><br>
+			
+			<label for="fecha2">Ingrese fecha 2:</label> <br>
+			<input type="text" id="fecha2" name="fecha2" placeholder="Formato: dd/mm/yyyy"> <br><br>
+			
+			<button type="button" onclick="calDif()">Calcular cantidad de días entre fechas</button>
+		</form>
+		
+		<script>
+			// Función
+			function calDif(){
+				
+				var f1 = document.getElementById("fecha1").value.trim();
+				var f2 = document.getElementById("fecha2").value.trim();
+				const formato = /^\d{2}\/\d{2}\/\d{4}$/; //expresión regular que define el formato que debe tener la cadena
+				
+				if(!formato.test(f1) || !formato.test(f2)){
+					alert("Las fechas deben estar en el formato dd/mm/yyyy !!");
+					return;
+				}
+				
+				var [d1, m1, y1] = f1.split('/').map(Number);
+				var [d2, m2, y2] = f2.split('/').map(Number);
+
+				var fecha1 = new Date(y1, m1 - 1, d1);
+				var fecha2 = new Date(y2, m2 - 1, d2);
+				
+				if (isNaN(fecha1.getTime()) || isNaN(fecha2.getTime())) {
+					alert("Una o ambas fechas no son válidas.");
+					return;
+				}
+
+				var diferenciaMs = fecha2 - fecha1;
+				var diferenciaDias = Math.floor(diferenciaMs / (1000 * 60 * 60 * 24));
+
+				if (diferenciaDias < 0) {
+					alert("La segunda fecha debe ser posterior a la primera.");
+					return;
+				}
+				alert(`La diferencia entre las fechas es de ${diferenciaDias} días.`);
+			}
+		</script>
+
+	</body>
+
+</html>
