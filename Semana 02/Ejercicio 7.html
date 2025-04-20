@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Valor del producto sin y con IVA</title>
+	</head>
+
+	<body>
+		<h1>Valor del producto sin y con IVA</h1>
+		<form id= "DatosUsuario">
+			<label for="costo">Ingrese costo de producto con IVA incluido (Gs):</label> <br>
+			<input type="number" id="costo" name="costo" placeholder="Ej: 110000"> <br><br>
+			
+			<button type="button" onclick="calcularValor()">Ingresar</button>
+		</form>
+		
+		<script>
+			// Función
+			function calcularValor(){
+				var costoProduct = parseInt(document.getElementById("costo").value);
+				
+				var costoSinIVA = Math.round(costoProduct / 1.10);
+				var valorIVA = Math.round(costoProduct - costoSinIVA);
+				
+				
+				const mensajeIVA = `El costo del producto sin IVA incluído sería de: ${costoSinIVA} Gs.\nEl valor del IVA sería: ${valorIVA} Gs.`;
+				
+				alert(mensajeIVA);
+			}
+		</script>
+
+	</body>
+
+</html>

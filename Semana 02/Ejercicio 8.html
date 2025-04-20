@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Gasto total en restaurante y cálculo de propina</title>
+	</head>
+
+	<body>
+		<h1>Gasto total en restaurante y cálculo de propina</h1>
+		<form id= "DatosUsuario">
+			<label for="monto">Ingrese monto total de la cuenta (Gs):</label> <br>
+			<input type="number" id="monto" name="monto" placeholder="Ej: 100000"> <br><br>
+			
+			<label for="propina">Ingrese porcentaje para propina (sin el símbolo %):</label> <br>
+			<input type="number" id="propina" name="propina" placeholder="Ej: 10"> <br><br>
+			
+			<button type="button" onclick="calcularPropina()">Ingresar</button>
+		</form>
+		
+		<script>
+			// Función
+			function calcularPropina(){
+				
+				var montoProp = document.getElementById("monto").value;
+				var porProp = document.getElementById("propina").value;
+				
+				var montoPropina = montoProp * (porProp/100);
+				
+				const mensajeIVA = `El monto de la propina sería: ${montoPropina} Gs.`;
+				
+				alert(mensajeIVA);
+			}
+		</script>
+
+	</body>
+
+</html>

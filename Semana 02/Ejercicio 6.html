@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Costo + IVA de un producto</title>
+	</head>
+
+	<body>
+		<h1>Costo + IVA de un producto</h1>
+		<form id= "DatosUsuario">
+			<label for="costo">Ingrese costo de producto:</label> <br>
+			<input type="number" id="costo" name="costo"> <br><br>
+			
+			<button type="button" onclick="calcularIVA()">Ingresar</button>
+		</form>
+		
+		<script>
+			// Función
+			function calcularIVA(){
+				var costoProduct = parseInt(document.getElementById("costo").value);
+				
+				var costoconIVA = costoProduct + (costoProduct*0.1);
+				
+				
+				const mensajeIVA = `El costo del producto con IVA incluído sería de: ${costoconIVA} guaraníes.`;
+				
+				alert(mensajeIVA);
+			}
+		</script>
+
+	</body>
+
+</html>

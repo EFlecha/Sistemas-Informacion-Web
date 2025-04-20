@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Conversor de temperatura: Celsius a Fahrenheit</title>
+	</head>
+
+	<body>
+		<h1>Conversor de Celsius a Fahrenheit</h1>
+		<form id= "convTemp">
+			<label for="Celsius">Ingresa la temperatura en Celsius (°C):</label> <br>
+			<input type="number" id="Celsius" name="Celsius" placeholder="Ej: 25"> <br><br>
+			
+			<button type="button" onclick="convCelaFahr()">Convertir</button>
+			
+		</form>
+		
+		<script>
+			// Función para convertir la temperatura de Celsius a Fahrenheit
+			function convCelaFahr(){
+				var tempFahr = ((document.getElementById("Celsius").value)*(9/5)) + 32;
+				alert("La temperatura en Fahrenheit es: "+tempFahr);
+			}
+		</script>
+
+	</body>
+
+</html>
